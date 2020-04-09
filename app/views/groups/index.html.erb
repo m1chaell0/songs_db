@@ -1,0 +1,19 @@
+<h1>All groups</h1>
+
+<%= link_to 'New group', new_group_path %>
+<h2></h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Group</th>
+    <th></th>
+  </tr>
+
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.id %></td>
+      <td><%= article.name %></td>
+      <td><%= link_to 'Show', group_path(group) %></td>
+    </tr>
+  <% end %>
+</table>

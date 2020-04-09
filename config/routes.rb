@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   end
 
   resources :groups, shallow: true do
-    resources :artists
+    resources :albums
+  end
+
+  resources :artists, shallow: true do
     resources :albums
   end
 
