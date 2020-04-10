@@ -6,13 +6,14 @@
   <tr>
     <th>ID</th>
     <th>Group</th>
-    <th></th>
+    <th>Artists</th>
   </tr>
 
   <% @groups.each do |group| %>
     <tr>
       <td><%= group.id %></td>
       <td><%= group.name %></td>
+
       <td><%= link_to 'Show', group_path(group) %></td>
       <td><%= link_to 'Edit', edit_group_path(group) %></td>
     </tr>

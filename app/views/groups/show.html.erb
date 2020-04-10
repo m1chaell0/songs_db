@@ -1,5 +1,18 @@
 <p>
   <strong>Group name:</strong>
   <%= @group.name %> <br>
-  <%= link_to 'All groups', groups_path %>
 </p>
+<p>
+  <strong>Artists :</strong>
+
+  <% @group.artists.each do |artist| %>
+    <tr>
+      <td><%= artist.name %></td>>
+    </tr>
+  <% end %>
+</p>
+
+
+
+
+  <%= link_to 'All groups', groups_path %>
