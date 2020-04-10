@@ -9,18 +9,36 @@ class ArtistsController < ApplicationController
   end
 
   def new
+    @artist = Artist.new
+  end
+
+  def edit
+    @artist = Artist.find(params[:id])
   end
 
   def create
     @artist = Artist.new(artist_params)
 
-    @artist.save
-    redirect_to @artist
+    if @artist.save
+      redirect_to @artist
+    else
+      render 'new'
+    end
+  end
+
+  def update
+    @artist = Artist.find(params[:id])
+
+    if @artist.update(artist_params)
+      redirect_to @artist
+    else
+      render 'edit'
+    end
   end
 
   private
 
-  def group_params
+  def artist_params
     params.require(:artist).permit(:name, :group_id)
   end
 end

@@ -1,9 +1,10 @@
 <p>
-  <strong>Artist:</strong>
-  <%= @artist.name %>
+  <strong>Artist: </strong>
+  <%= @artist.name %> <br>
+  <%= link_to 'All artists', artists_path %>
 </p>
 
 <p>
   <strong>Group:</strong>
-  <%= @group.text %>
+  <%= Artist.find(@artist.group_id).group.name %>
 </p>
