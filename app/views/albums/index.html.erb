@@ -1,0 +1,21 @@
+<h1>All albums</h1>
+
+<%= link_to 'New album', new_album_path %>
+<h2></h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Group</th>
+    <th>Artists</th>
+  </tr>
+
+  <% @albums.each do |album| %>
+    <tr>
+      <td><%= album.id %></td>
+      <td><%= album.name %></td>
+
+      <td><%= link_to 'Show', album_path(album) %></td>
+      <td><%= link_to 'Edit', edit_album_path(album) %></td>
+    </tr>
+  <% end %>
+</table>

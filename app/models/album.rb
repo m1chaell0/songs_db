@@ -3,7 +3,9 @@ class Album < ApplicationRecord
   belongs_to :owner, polymorphic: true
   belongs_to :genre
 
+  before_create :capitalize_name
+
   def capitalize_name
-    self.name = self.name.capitalize
+    self.name = name.capitalize
   end
 end

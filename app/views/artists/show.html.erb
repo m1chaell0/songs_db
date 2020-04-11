@@ -5,6 +5,10 @@
 </p>
 
 <p>
-  <strong>Group:</strong>
-  <%= Artist.find(@artist.group_id).group.name %>
+  <strong>Group(s):</strong>
+   <% if @artist.groups.present? %>
+    <% @artist.groups.each do |group| %>
+      <%= group.name %>
+    <% end %>
+  <% end %>
 </p>

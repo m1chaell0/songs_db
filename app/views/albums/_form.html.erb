@@ -1,0 +1,35 @@
+
+<%= form_with model: @album, local: true do |form| %>
+
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :song_name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :owner_type %><br>
+    <%= form.select :owner_type, options_for_select([Artist.name, Group.name]) %>
+  </p>
+
+  <p>
+    <%= form.label :owner_id %><br>
+    <%= form.collection_select :owner_type, Artist.all, :id, :name%>
+  </p>
+
+  <p>
+    <%= form.label :owner_id %><br>
+    <%= form.collection_select :owner_type, Group.all, :id, :name%>
+  </p>
+  <p>
+    <%= form.submit %>
+
+
+  </p>
+<% end %>
+

@@ -6,7 +6,6 @@
   <tr>
     <th>ID</th>
     <th>Group</th>
-    <th>Artists</th>
   </tr>
 
   <% @groups.each do |group| %>
@@ -19,3 +18,7 @@
     </tr>
   <% end %>
 </table>
+
+<br>
+<%= link_to 'Artists', artists_path %>
+<br>
